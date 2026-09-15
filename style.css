@@ -97,7 +97,6 @@ button {
 
 .welcome-image {
     min-height: min(68vh, 650px);
-    border-radius: 4px;
     background: url("fotos/Welcomeimage.png") center / cover no-repeat;
 }
 
@@ -252,7 +251,7 @@ h2 {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 250px;
+    height: 450px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 12px 22px rgba(0, 30, 5, 0.75);
