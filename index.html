@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANFIBIOS - CHILOÉ</title>
+    <link rel="icon" type="image/png" href="Images/LogoChepu.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="welcome-screen">
+        <div class="welcome-copy">
+            <img class="welcome-logo" src="Images/LogoChepu.png" alt="Logo del Santuario de la cuenca de Chepu">
+            <p class="eyebrow">Fauna nativa de Chiloé</p>
+            <h1>ANFIBIOS DEL SANTUARIO DE LA NATURALEZA</h1>
+            <span class="Subtitle">HUMEDALES DE LA CUENCA DE CHEPU</span>
+            <p class="welcome-text">Conoce a las especies que habitan este humedal y pon a prueba tu mirada identificando sus siluetas.</p>
+            <button id="startBtn" type="button">Comenzar recorrido <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="welcome-image" role="img" aria-label="Paisaje del Santuario de la cuenca de Chepu"></div>
+    </main>
+
+    <main id="game-screen" class="hidden">
+        <p class="eyebrow game-eyebrow">Fauna nativa de Chiloé</p>
+        <h1 id="Title">ANFIBIOS DEL SANTUARIO DE LA NATURALEZA<br><span class="Subtitle">HUMEDALES DE LA CUENCA DE CHEPU</span></h1>
+        <h2 id="question">¿Qué animal corresponde a la descripción?</h2>
+
+    <!-- Barra de progreso -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Opciones -->
+    <div id="options" class="options"></div>
+    
+    <!-- Mensaje -->
+    <p id="message"></p>
+
+    <!-- Animal correcto -->
+    <div id="correct-animal" class="hidden">
+    <p id="photo-zoom-hint"><img src="Images/informacion.png" alt="Información"> Haz clic en la foto para ampliarla y saber más.</p>
+        <button id="correct-photo-btn" type="button" aria-label="Ampliar foto del animal identificado">
+         <img id="correct-img" src="" alt="Animal identificado">
+        </button>
+    <p id="correct-name"></p>
+    <p id="correct-scientific"></p>
+    </div>
+
+    <!-- Botón siguiente -->
+    <button id="nextBtn" type="button">Siguiente</button>
+
+    <!-- Pantalla final -->
+    <div id="final-screen" class="hidden">
+        <h1>¡Juego completado!</h1>
+        <p id="final-score"></p>
+        <button id="restartBtn" type="button">Volver a jugar</button>
+    </div>
+    </main>
+
+    <!-- Confeti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Zoom de la foto correcta -->
+    <div id="photo-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+        <button id="close-photo-btn" type="button" aria-label="Cerrar foto ampliada">&times;</button>
+        <div id="photo-viewport">
+            <img id="zoomed-photo" src="" alt="">
+        </div>
+        <p id="photo-help">Haz clic en distintas partes para ampliar. Arrastra la imagen para explorar.</p>
+        <div id="photo-controls" aria-label="Controles de zoom">
+            <button id="zoom-out-btn" type="button" aria-label="Alejar">&minus;</button>
+            <button id="reset-zoom-btn" type="button">Restablecer</button>
+            <button id="zoom-in-btn" type="button" aria-label="Acercar">+</button>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <!-- <footer id="site-footer">
+        <img id="site-footer-logo" src="Images/LogoChepuWhite.png" alt="Logo del Santuario de la cuenca de Chepu">
+    </footer> -->
+
+    <script src="main.js"></script>
+
+
+</body>
+</html>
