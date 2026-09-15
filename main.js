@@ -151,14 +151,14 @@ function generateAnimals() {
       .filter(a => a.name !== animal.name)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
-      .map(a => ({ name: a.name, photo: `fotos/${a.photo}` }));
+      .map(a => ({ name: a.name, scientific: a.scientific, photo: `fotos/${a.photo}` }));
 
     return {
       name: animal.name,
       question: animal.question,
       scientific: animal.scientific,
       correct,
-      options: [{ name: animal.name, photo: correct }, ...distractors].sort(() => Math.random() - 0.5)
+      options: [{ name: animal.name, scientific: animal.scientific, photo: correct }, ...distractors].sort(() => Math.random() - 0.5)
     };
     });
 }
@@ -219,6 +219,7 @@ function loadAnimal() {
   animal.options.forEach(option => {
     const label = document.createElement("label");
     label.classList.add("option");
+    label.style.setProperty("--option-bg", `url("${option.photo}")`);
 
     const img = document.createElement("img");
     img.src = option.photo;
@@ -232,11 +233,21 @@ function loadAnimal() {
     const name = document.createElement("span");
     name.innerText = option.name;
 
-    label.append(img, name, checkbox);
+    const scientific = document.createElement("small");
+    scientific.innerText = option.scientific || "";
+    scientific.classList.add("option-scientific");
+
+    const textWrap = document.createElement("div");
+    textWrap.classList.add("option-text");
+    textWrap.append(name, scientific);
+
+    label.append(img, textWrap, checkbox);
     optionsDiv.appendChild(label);
   });
 
-  document.getElementById("message").innerText = "";
+  const message = document.getElementById("message");
+  message.innerText = "";
+  message.classList.remove("status-correct", "status-incorrect");
   document.getElementById("nextBtn").style.display = "none";
 
   updateProgress();
@@ -247,13 +258,15 @@ function checkAnswer(selected) {
   if (answerLocked) return;
 
   const animal = animals[current];
+  const message = document.getElementById("message");
   answerLocked = true;
 
   if (selected === animal.name) {
     score++;
 
-    document.getElementById("message").innerText = "¡Correcto!";
-    document.getElementById("message").style.color = "#096c00";
+    message.innerText = "¡Correcto!";
+    message.classList.remove("status-incorrect");
+    message.classList.add("status-correct");
 
     document.getElementById("correct-img").src = animal.correct;
 
@@ -271,8 +284,9 @@ function checkAnswer(selected) {
 
   } else {
     errors++;
-    document.getElementById("message").innerText = "Incorrecto!";
-    document.getElementById("message").style.color = "#f70808a1";
+    message.innerText = "Incorrecto";
+    message.classList.remove("status-correct");
+    message.classList.add("status-incorrect");
 
     setTimeout(() => {
       current++;

@@ -99,7 +99,6 @@ button {
     min-height: min(68vh, 650px);
     border-radius: 4px;
     background: url("fotos/Welcomeimage.png") center / cover no-repeat;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .game-eyebrow {
@@ -150,11 +149,11 @@ h2 {
     margin: 50px auto 0;
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    color: rgb(88, 87, 87);
+    font-size: 22px;
+    line-height: 1.25;
+    color: rgb(255, 255, 255);
     font-weight: Bold;
-    background: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(180deg, rgba(9, 34, 22, 0.3), rgba(20, 65, 48, 0.25));
     border-radius: 20px;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -224,48 +223,102 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 12px;
-    border: 2px solid transparent;
-    border-radius: 8px;
+    gap: 35px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
     overflow: hidden;
-    background: #f3f3f3;
+    background: linear-gradient(180deg, rgba(9, 34, 22, 0.82), rgba(20, 65, 48, 0.75));
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.option::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 10px;
+    background: var(--option-bg, rgba(255, 255, 255, 0.15));
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(0.9);
+    opacity: 0.28;
+    z-index: 0;
 }
 
 .option img {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 250px;
     object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 12px 22px rgba(0, 30, 5, 0.75);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .option span {
+    position: relative;
+    z-index: 1;
+}
+
+.option input {
+    position: relative;
+    z-index: 1;
+}
+
+.option-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
     min-height: 2.5em;
-    color: #585757;
-    font-size: 16px;
+    transform: translateY(2px);
+}
+
+.option span {
+    min-height: 1.2em;
+    color: #fbfbfb;
+    font-size: 25px;
     font-weight: bold;
+    line-height: 1;
+}
+
+.option-scientific {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .option input {
     appearance: none;
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     margin: 0;
-    border: 3px solid #e94e1b;
+    border: 3px solid rgb(100, 178, 134);
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
 }
 
 .option input:checked {
-    background: #e94e1b;
+    background: rgb(100, 178, 134);
     box-shadow: inset 0 0 0 6px #ffffff;
 }
 
 .option:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(244, 152, 44, 0.9);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(244, 152, 44, 0.45);
+    border-color: rgba(244, 152, 44, 0.65);
 }
 
 /* ======== MENSAJE ======== */
@@ -274,7 +327,17 @@ h2 {
     font-size: 50px;
     margin-top: 20px;
     font-weight: bold;
-    
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+#message.status-correct {
+    color: #096c00;
+}
+
+#message.status-incorrect {
+    color: #d32f2f;
 }
 
 /* ======== BOTÓN SIGUIENTE ======== */
