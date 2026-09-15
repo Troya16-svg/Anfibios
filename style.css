@@ -765,25 +765,54 @@ h2 {
     }
 
     .options {
-        width: min(100%, 380px);
+        width: min(100%, 420px);
         margin-left: auto;
         margin-right: auto;
-        gap: 8px;
+        gap: 12px;
         margin-top: 14px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .option {
-        width: calc(50% - 4px);
-        flex: 0 1 calc(50% - 4px);
+        width: calc(50% - 6px);
+        flex: 0 1 calc(50% - 6px);
         min-width: 0;
         min-height: 190px;
+        gap: 10px;
+        padding: 10px;
         box-sizing: border-box;
     }
 
+    .option::before {
+        inset: 8px;
+    }
+
     .option img {
-        height: 110px;
+        height: 120px;
+        box-shadow: 0 8px 18px rgba(0, 30, 5, 0.6);
+    }
+
+    .option-text {
+        gap: 1px;
+        transform: none;
+        min-height: 2em;
+    }
+
+    .option span {
+        min-height: 1em;
+        font-size: 15px;
+        line-height: 1.15;
+    }
+
+    .option-scientific {
+        font-size: 11px;
+    }
+
+    .option input {
+        width: 28px;
+        height: 28px;
+        border-width: 2px;
     }
 
     #message {
