@@ -1,13 +1,13 @@
 // Lista de animales con nombre común, descripción y foto
 const animalsData = [
-{ name: "Rana esmeralda", question: "Piel suave. Extremidades muy largas y delgadas. Su color es verde esmeralda, con manchas cobrizas irregulares", scientific: "(Hylorina sylvatica)", photo: "RanaEsmeralda.jpg" },
-{ name: "Rana de antifaz", question: "Piel lisa. Su color varía entre café, terracota y beige. Un rasgo característico es la franja de pigmento a cada lado del rostro, desde las narinas hasta el tímpano, a modo de antifaz", scientific: "(Batrachyla taeniata)", photo: "RanaDeAntifaz.jpg" },
-{ name: "Rana moteada", question: "Piel suavemente granulosa. Extremidades delgadas, con dedos finos y de punta ensanchadas en forma de paleta. Su color varía entre grises, terracotas y cafés oscuros sobre un fondo claro", scientific: "(Batrachyla taeniata)", photo: "RanaMoteada.jpg" },
-{ name: "Rana jaspeada", question: "Piel suave, con pocas granulaciones. Extremidades delgadas con dedos finos que terminan en forma espatulada. Su color contiene un fondo amarillo con numerosas manchas oscuras irregulares", scientific: "(Batrachyla leptopus)", photo: "RanaJaspeada.jpg" },
-{ name: "Rana de hojarasca austral", question: "Piel con pocas granulaciones. Extremidades posteriores robustas, las anteriores delgadas. Su color es variable, fondo claro con manchas oscuras. Sobre su cabeza presenta una mancha con forma de 'reloj de arena'", scientific: "(Eupsophus calcaratus)", photo: "RanaDeHojarascaAustral.jpg" },
-{ name: "Rana grande de hojarasca", question: "Piel lisa. Cuerpo robusto y extremidades fuertes. Su color es café grisáceo. Posee mancha de color verde oliváceo sobre los ojos", scientific: "(Eupsophus emiliopugini)", photo: "RanaGrandeDeHojarasca.jpg" },
-{ name: "Ranita de Darwin", question: "Piel suave, posee un relieve cutáneo en ambos flancos formado de pequeños relieves glandulares. Su color es variable, con tonos rojizos, cafés y verdes. Posee un apéndice nasal cilínrico de 2 mm de largo", scientific: "(Rhinoderma darwinii)", photo: "RanitaDeDarwin.jpg" },
-{ name: "Sapito de cuatro ojos", question: "Piel con algunas granulaciones irregulares. Cuerpo rechoncho con extremidades cortas y delgadas. Su color es muy variable, siendo gris, café, beige o verde, con manchas irregulares oscuras", scientific: "(Pleurodema thaul)", photo: "SapitoDeCuatroOjos.jpg" },
+{ name: "Rana esmeralda", question: "Piel suave. Extremidades muy largas y delgadas. Su color es verde esmeralda, con manchas cobrizas irregulares", scientific: "(Hylorina sylvatica)", photo: "Rana esmeralda.jpg" },
+{ name: "Rana de antifaz", question: "Piel lisa. Su color varía entre café, terracota y beige. Un rasgo característico es la franja de pigmento a cada lado del rostro, desde las narinas hasta el tímpano, a modo de antifaz", scientific: "(Batrachyla taeniata)", photo: "Rana de antifaz.jpg" },
+{ name: "Rana moteada", question: "Piel suavemente granulosa. Extremidades delgadas, con dedos finos y de punta ensanchadas en forma de paleta. Su color varía entre grises, terracotas y cafés oscuros sobre un fondo claro", scientific: "(Batrachyla taeniata)", photo: "Rana moteada.jpg" },
+{ name: "Rana jaspeada", question: "Piel suave, con pocas granulaciones. Extremidades delgadas con dedos finos que terminan en forma espatulada. Su color contiene un fondo amarillo con numerosas manchas oscuras irregulares", scientific: "(Batrachyla leptopus)", photo: "Rana jaspeada.jpg" },
+{ name: "Rana de hojarasca austral", question: "Piel con pocas granulaciones. Extremidades posteriores robustas, las anteriores delgadas. Su color es variable, fondo claro con manchas oscuras. Sobre su cabeza presenta una mancha con forma de 'reloj de arena'", scientific: "(Eupsophus calcaratus)", photo: "Rana de hojarasca austral.jpg" },
+{ name: "Rana grande de hojarasca", question: "Piel lisa. Cuerpo robusto y extremidades fuertes. Su color es café grisáceo. Posee mancha de color verde oliváceo sobre los ojos", scientific: "(Eupsophus emiliopugini)", photo: "Rana grande de hojarasca.jpg" },
+{ name: "Ranita de Darwin", question: "Piel suave, posee un relieve cutáneo en ambos flancos formado de pequeños relieves glandulares. Su color es variable, con tonos rojizos, cafés y verdes. Posee un apéndice nasal cilínrico de 2 mm de largo", scientific: "(Rhinoderma darwinii)", photo: "Ranita de Darwin.jpg" },
+{ name: "Sapito de cuatro ojos", question: "Piel con algunas granulaciones irregulares. Cuerpo rechoncho con extremidades cortas y delgadas. Su color es muy variable, siendo gris, café, beige o verde, con manchas irregulares oscuras", scientific: "(Pleurodema thaul)", photo: "Sapito de cuatro ojos.jpg" },
 
 ];
 
@@ -272,7 +272,7 @@ function checkAnswer(selected) {
 
     document.getElementById("correct-name").innerText = animal.name;
     document.getElementById("correct-scientific").innerText = animal.scientific;
-    photoHelp.innerText = animalDescriptions[animal.name];
+    photoHelp.innerHTML = `<strong class="photo-name">${animal.name}</strong><em class="photo-scientific">${animal.scientific}</em><span class="photo-description">${animalDescriptions[animal.name]}</span>`;
 
     document.getElementById("correct-img").classList.add("correct-zoom");
 
