@@ -176,6 +176,7 @@ function updateProgress() {
 function hideGameUI() {
   document.querySelector(".game-eyebrow").classList.add("hidden");
   document.getElementById("Title").classList.add("hidden");
+  document.querySelector(".question-box").classList.add("hidden");
   document.getElementById("question").classList.add("hidden");
   document.getElementById("options").style.display = "none";
   document.getElementById("message").style.display = "none";
@@ -188,6 +189,7 @@ function hideGameUI() {
 function showGameUI() {
   document.querySelector(".game-eyebrow").classList.remove("hidden");
   document.getElementById("Title").classList.remove("hidden");
+  document.querySelector(".question-box").classList.remove("hidden");
   document.getElementById("question").classList.remove("hidden");
   document.getElementById("options").style.display = "flex";
   document.getElementById("message").style.display = "block";
