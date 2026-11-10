@@ -19,18 +19,19 @@ button {
 
 #welcome-screen {
     min-height: calc(100vh - 20px);
-    max-width: 1180px;
+    width: min(100%, 900px);
+    box-sizing: border-box;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(320px, 0.85fr) minmax(380px, 1.15fr);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: clamp(35px, 7vw, 100px);
-    text-align: left;
-
+    justify-content: center;
+    gap: clamp(12px, 2vh, 24px);
+    text-align: center;
 }
 
 .welcome-copy {
-    padding: 30px 0;
+    width: 100%;
 }
 
 .welcome-logo {
@@ -54,14 +55,20 @@ button {
     margin: 0;
     color:rgb(1, 190, 42);
     text-shadow: 10px 10px 10px -7px #121212;
-    font-size: clamp(30px, 5vw, 53px);
+    font-size: clamp(60px, 5vw, 40px);
     line-height: 0.98;
     letter-spacing: -1px;
 }
 
+#welcome-screen .Subtitle {
+    display: block;
+    font-size: clamp(24px, 4vw, 40px);
+    line-height: 1.1;
+}
+
 .welcome-text {
-    max-width: 470px;
-    margin: 28px 0 34px;
+    max-width: 650px;
+    margin: 0 auto;
     color:rgb(88, 87, 87);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
@@ -96,7 +103,7 @@ button {
 }
 
 .welcome-image {
-    width: 100%;
+    width: min(100%, 750px);
     aspect-ratio: 1 / 1;
     min-height: 0;
     background: url("fotos/Welcomeimage.png") center / contain no-repeat;
@@ -464,15 +471,15 @@ h2 {
     }
 
     #welcome-screen {
-        position: relative;
         min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 34px 0 42px;
+        gap: clamp(12px, 4vw, 16px);
+        padding: 24px 0;
     }
 
-    .welcome-copy {
-        padding: 0;
+    #welcome-screen .eyebrow {
+        margin-bottom: 12px;
+        font-size: clamp(15px, 4vw, 20px);
+        letter-spacing: clamp(1px, 0.5vw, 2px);
     }
 
     .welcome-logo {
@@ -485,14 +492,21 @@ h2 {
     }
 
     .welcome-image {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        min-height: 0;
-        order: -1;
+        width: min(100%, 480px);
     }
 
     #welcome-screen h1 {
-        font-size: 40px;
+        font-size: clamp(28px, 8.5vw, 40px);
+    }
+
+    #welcome-screen .Subtitle {
+        font-size: clamp(22px, 6vw, 32px);
+    }
+
+    #welcome-screen .welcome-text {
+        padding: 0 8px;
+        font-size: clamp(16px, 4.5vw, 19px);
+        letter-spacing: 1px;
     }
 }
 
