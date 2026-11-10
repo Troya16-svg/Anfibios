@@ -1,0 +1,21 @@
+{
+  "name": "Anfibios del Santuario de la Naturaleza",
+  "short_name": "Anfibios",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#d3d5d6",
+  "theme_color": "#d3d5d6",
+  "icons": [
+    {
+      "src": "fotos/WelcomeimageIcon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "fotos/WelcomeimageIcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
